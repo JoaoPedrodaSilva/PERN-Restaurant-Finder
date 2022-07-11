@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import axios from '../apis/axios'
 import { useGlobalContext } from '../globalContext'
@@ -8,6 +8,7 @@ const RestaurantList = () => {
     const { allRestaurants, setAllRestaurants } = useGlobalContext()
 
     useEffect(() => {
+        console.log('hi')
         const fetchData = async () => {
             try {
                 const response = await axios.get('/')
@@ -17,26 +18,14 @@ const RestaurantList = () => {
             }
         }
         fetchData()
-    }, [allRestaurants])
-
-    // The data fetching above has an infinite loop.
-    // Tried to fix that with useCallback below, but did not work.
-    // const fetchData = useCallback(async () => {
-    //     console.log(allRestaurants)
-    //         try {
-    //             const response = await axios.get('/')
-    //             setAllRestaurants(response.data.restaurants)
-    //         } catch (error) {
-    //             console.log(error)
-    //         }
-    //     }, [allRestaurants])
-    //     useEffect(() => {
-    //         fetchData()
-    //     }, [allRestaurants, fetchData])        
+    }, [])      
 
     const handleDelete = async id => {
         try {
+            
             await axios.delete(`/${id}`)
+            setAllRestaurants(allRestaurants.filter(restaurant => restaurant.id !== id))
+
         } catch (error) {
             console.log(error)
         }
