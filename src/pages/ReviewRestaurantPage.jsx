@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import ReviewRestaurantForm from '../components/ReviewRestaurantForm'
 import ReviewCards from '../components/ReviewCards'
-import axios from '../apis/axios'
+import axios from '../axios'
 import { useParams } from 'react-router-dom'
 import { useGlobalContext } from '../globalContext'
 import ReviewRestaurantHeader from '../components/ReviewRestaurantHeader'
@@ -29,7 +29,7 @@ const ReviewRestaurantPage = () => {
         <section className='flex flex-col items-center select-none'>
           <ReviewRestaurantHeader restaurant={selectedRestaurant.restaurant} />
           <ReviewCards reviews={selectedRestaurant.reviews} />
-          <ReviewRestaurantForm reviews={selectedRestaurant.reviews} />
+          <ReviewRestaurantForm />
         </section>
       )}
     </>

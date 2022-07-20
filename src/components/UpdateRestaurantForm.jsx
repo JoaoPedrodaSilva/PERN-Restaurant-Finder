@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { useGlobalContext } from '../globalContext'
-import axios from '../apis/axios'
+import axios from '../axios'
 
 
 const UpdateRestaurantForm = () => {

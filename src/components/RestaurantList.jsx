@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import axios from '../apis/axios'
+import axios from '../axios'
 import { useGlobalContext } from '../globalContext'
 import ReviewRatingStars from './ReviewRatingStars'
 
@@ -8,7 +8,6 @@ const RestaurantList = () => {
     const { allRestaurants, setAllRestaurants } = useGlobalContext()
 
     useEffect(() => {
-        console.log('hi')
         const fetchData = async () => {
             try {
                 const response = await axios.get('/')
@@ -18,7 +17,7 @@ const RestaurantList = () => {
             }
         }
         fetchData()
-    }, [])      
+    }, [])
 
     const handleDelete = async id => {
         try {

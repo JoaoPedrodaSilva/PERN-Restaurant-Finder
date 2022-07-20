@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
 import { useParams, Link } from 'react-router-dom'
-import axios from '../apis/axios'
+import axios from '../axios'
 import { useGlobalContext } from '../globalContext'
 
-const ReviewRestaurantForm = ({reviews}) => {
+const ReviewRestaurantForm = () => {
     const {id} = useParams()
 
     const {

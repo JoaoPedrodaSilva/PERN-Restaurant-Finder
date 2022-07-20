@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import axios from '../apis/axios'
+import axios from '../axios'
 import ReviewRatingStars from './ReviewRatingStars'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { useGlobalContext } from '../globalContext'

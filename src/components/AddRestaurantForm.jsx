@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import axios from '../apis/axios'
+import axios from '../axios'
 import { useGlobalContext } from '../globalContext'
 
 const AddRestaurantForm = () => {
